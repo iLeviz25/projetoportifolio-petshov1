@@ -22,35 +22,35 @@ const getStatusColor = (status: string) => {
   }
 };
 
-export const Orders = () => {
+export const Appointments = () => {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold flex items-center gap-2 text-pink-700 dark:text-pink-200">
-          <Bath className="w-7 h-7" />
+        <h1 className="text-2xl font-bold flex items-center gap-2 text-[#121212] dark:text-white">
+          <Bath className="w-7 h-7 text-[#c084fc]" />
           Agendamentos (Consultas e Banhos)
         </h1>
-        <div className="text-sm text-teal-700 dark:text-pink-300">
+        <div className="text-sm text-[#444444] dark:text-[#bbbbbb]">
           Total: {appointments.length}
         </div>
       </div>
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-pink-900 overflow-hidden">
+      <div className="rounded-lg border border-[#eaeaec] dark:border-[#23233b] shadow-[0_0_10px_rgba(0,0,0,0.08)] dark:shadow-[0_0_12px_rgba(0,0,0,0.32)] bg-white dark:bg-[#1f1f2b] overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-blue-50 dark:bg-teal-900">
+            <thead className="bg-[#f5f5fa] dark:bg-[#23233b]">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-teal-700 dark:text-pink-300 uppercase tracking-wider">Nome do Pet</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-teal-700 dark:text-pink-300 uppercase tracking-wider">Serviço</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-teal-700 dark:text-pink-300 uppercase tracking-wider">Data</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-teal-700 dark:text-pink-300 uppercase tracking-wider">Status</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">Nome do Pet</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">Serviço</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">Data</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">Status</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200 dark:divide-pink-900">
+            <tbody>
               {appointments.map((item) => (
-                <tr key={item.id} className="hover:bg-pink-50 dark:hover:bg-pink-950 transition-colors">
-                  <td className="px-6 py-4 text-sm font-medium text-gray-800 dark:text-pink-200">{item.pet}</td>
-                  <td className="px-6 py-4 text-sm text-gray-500 dark:text-pink-300">{item.service}</td>
-                  <td className="px-6 py-4 text-sm text-gray-500 dark:text-pink-300">{new Date(item.date).toLocaleDateString('pt-BR')}</td>
+                <tr key={item.id} className="hover:bg-[#ede9fe] dark:hover:bg-[#262636] transition-colors">
+                  <td className="px-6 py-4 text-sm font-medium text-[#121212] dark:text-white">{item.pet}</td>
+                  <td className="px-6 py-4 text-sm text-[#444444] dark:text-[#bbbbbb]">{item.service}</td>
+                  <td className="px-6 py-4 text-sm text-[#444444] dark:text-[#bbbbbb]">{new Date(item.date).toLocaleDateString('pt-BR')}</td>
                   <td className="px-6 py-4">
                     <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(item.status)}`}>
                       {item.status}

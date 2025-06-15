@@ -12,11 +12,11 @@ export const Pets = () => {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold flex items-center gap-2 text-white">
+        <h1 className="text-2xl font-bold flex items-center gap-2 text-[#121212] dark:text-white">
           <Dog className="w-7 h-7 text-[#c084fc]" />
           Pets Cadastrados
         </h1>
-        <div className="text-sm text-[#bbbbbb]">
+        <div className="text-sm text-[#444444] dark:text-[#bbbbbb]">
           Total: {pets.length} pets
         </div>
       </div>
@@ -24,21 +24,21 @@ export const Pets = () => {
         {pets.map((pet) => (
           <div
             key={pet.id}
-            className="bg-[#1f1f2b] shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-lg border border-[#23233b] p-6 transition-all duration-200 hover:shadow-md hover:scale-105"
+            className="rounded-lg border border-[#eaeaec] dark:border-[#23233b] p-6 shadow-[0_0_10px_rgba(0,0,0,0.08)] dark:shadow-[0_0_12px_rgba(0,0,0,0.32)] bg-white dark:bg-[#1f1f2b] transition-all hover:shadow-md hover:scale-105"
           >
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-[#262636] rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#ede9fe] dark:bg-[#262636] rounded-full flex items-center justify-center">
                 <PawPrint className="w-8 h-8 text-[#a78bfa]" />
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-white">{pet.name}</h3>
-                <div className="text-sm text-[#bbbbbb] mt-1">
+                <h3 className="text-lg font-semibold text-[#121212] dark:text-white">{pet.name}</h3>
+                <div className="text-sm text-[#444444] dark:text-[#bbbbbb] mt-1">
                   Espécie: <span className="font-medium">{pet.specie}</span>
                 </div>
-                <div className="text-sm text-[#bbbbbb] mt-1">
+                <div className="text-sm text-[#444444] dark:text-[#bbbbbb] mt-1">
                   Idade: <span className="font-medium">{pet.age}</span>
                 </div>
-                <div className="text-sm text-[#bbbbbb] mt-1">
+                <div className="text-sm text-[#444444] dark:text-[#bbbbbb] mt-1">
                   Tutor: <span className="font-medium">{pet.owner}</span>
                 </div>
               </div>
