@@ -6,7 +6,7 @@ const statsCards = [
     title: "Total de Pets",
     value: "58",
     icon: Dog,
-    color: "bg-blue-100 text-blue-800 dark:bg-[#252535] dark:text-[#7dd3fc]",
+    color: "bg-blue-100 text-blue-800 dark:bg-[#1f1f2b] dark:text-[#ffffff]",
     change: "+6%",
     changeType: "positive"
   },
@@ -14,7 +14,7 @@ const statsCards = [
     title: "Agendamentos do Mês",
     value: "24",
     icon: Bath,
-    color: "bg-green-100 text-green-800 dark:bg-[#252535] dark:text-[#a5b4fc]",
+    color: "bg-green-100 text-green-800 dark:bg-[#1f1f2b] dark:text-[#ffffff]",
     change: "+10%",
     changeType: "positive"
   },
@@ -22,7 +22,7 @@ const statsCards = [
     title: "Mensagens Pendentes",
     value: "3",
     icon: MessageSquare,
-    color: "bg-pink-100 text-pink-700 dark:bg-[#252535] dark:text-[#facc15]",
+    color: "bg-pink-100 text-pink-700 dark:bg-[#1f1f2b] dark:text-[#ffffff]",
     change: "0",
     changeType: "neutral"
   }
@@ -52,8 +52,8 @@ const getStatusColor = (status: string) => {
 export const Overview = () => {
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold flex items-center gap-2 text-purple-700 dark:text-[#f5f5f5]">
-        <PawPrint className="w-7 h-7 inline-block text-purple-500 dark:text-[#a5b4fc]" />
+      <h1 className="text-2xl font-bold flex items-center gap-2 text-purple-700 dark:text-[#ffffff]">
+        <PawPrint className="w-7 h-7 inline-block text-purple-500 dark:text-[#a78bfa]" />
         Visão Geral
       </h1>
       {/* Stats Cards */}
@@ -61,7 +61,7 @@ export const Overview = () => {
         {statsCards.map((card, index) => {
           const Icon = card.icon;
           return (
-            <div key={index} className={`rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 p-6 transition-all duration-200 hover:shadow-md ${card.color} hover:scale-105`}>
+            <div key={index} className={`rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] p-6 transition-all duration-200 hover:shadow-md ${card.color} hover:scale-105`}>
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium">{card.title}</p>
@@ -71,8 +71,8 @@ export const Overview = () => {
                     <span className="ml-2 text-xs">{card.change}</span>
                   </div>
                 </div>
-                <div className="p-3 bg-white bg-opacity-60 dark:bg-[#1f1f2b] rounded-lg">
-                  <Icon className="w-6 h-6" />
+                <div className="p-3 bg-white bg-opacity-60 dark:bg-[#2c2c3a] rounded-lg">
+                  <Icon className="w-6 h-6 dark:text-[#a78bfa]" />
                 </div>
               </div>
             </div>
@@ -80,32 +80,32 @@ export const Overview = () => {
         })}
       </div>
       {/* Recent Appointments */}
-      <div className="bg-white dark:bg-[#252535] rounded-lg shadow-sm border border-gray-200 dark:border-gray-600">
-        <div className="p-6 border-b border-gray-200 dark:border-gray-600">
-          <h2 className="text-lg font-semibold text-purple-600 dark:text-[#f5f5f5]">Últimos Agendamentos</h2>
+      <div className="bg-white dark:bg-[#1f1f2b] dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+        <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+          <h2 className="text-lg font-semibold text-purple-600 dark:text-[#ffffff]">Últimos Agendamentos</h2>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-blue-50 dark:bg-[#1f1f2b]">
+            <thead className="bg-blue-50 dark:bg-[#2c2c3a]">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-purple-700 dark:text-[#e0e0e0] uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-purple-700 dark:text-[#ffffff] uppercase tracking-wider">
                   Nome do Pet
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-purple-700 dark:text-[#e0e0e0] uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-purple-700 dark:text-[#ffffff] uppercase tracking-wider">
                   Serviço
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-purple-700 dark:text-[#e0e0e0] uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-purple-700 dark:text-[#ffffff] uppercase tracking-wider">
                   Data
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-purple-700 dark:text-[#e0e0e0] uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-purple-700 dark:text-[#ffffff] uppercase tracking-wider">
                   Status
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200 dark:divide-gray-600">
+            <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
               {recentAppointments.map((appt) => (
-                <tr key={appt.id} className="hover:bg-purple-50 dark:hover:bg-[#1f1f2b] transition-colors">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-[#e0e0e0]">
+                <tr key={appt.id} className="hover:bg-purple-50 dark:hover:bg-[#2c2c3a] transition-colors">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-[#ffffff]">
                     {appt.petName}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-[#bbbbbb]">

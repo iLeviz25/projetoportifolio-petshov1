@@ -36,7 +36,7 @@ export const Clients = () => {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold flex items-center gap-2 text-purple-700 dark:text-[#f5f5f5]">
+        <h1 className="text-2xl font-bold flex items-center gap-2 text-purple-700 dark:text-[#ffffff]">
           <Users className="w-7 h-7" />
           Clientes (Tutores)
         </h1>
@@ -47,13 +47,13 @@ export const Clients = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {clients.map((client) => (
-          <div key={client.id} className="bg-white dark:bg-[#252535] rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 p-6 transition-all duration-200 hover:shadow-md hover:scale-105">
+          <div key={client.id} className="bg-white dark:bg-[#1f1f2b] dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-all duration-200 hover:shadow-md hover:scale-105">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-purple-100 dark:bg-[#1f1f2b] rounded-full flex items-center justify-center">
-                <PawPrint className="w-7 h-7 text-purple-500" />
+              <div className="w-12 h-12 bg-purple-100 dark:bg-[#2c2c3a] rounded-full flex items-center justify-center">
+                <PawPrint className="w-7 h-7 text-purple-500 dark:text-[#a78bfa]" />
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-purple-800 dark:text-[#f5f5f5]">
+                <h3 className="text-lg font-semibold text-purple-800 dark:text-[#ffffff]">
                   {client.name}
                 </h3>
                 <div className="text-sm text-gray-500 dark:text-[#bbbbbb] mt-1">
