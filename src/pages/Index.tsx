@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Sidebar } from "@/components/Sidebar";
 import { Header } from "@/components/Header";
@@ -56,4 +55,5 @@ const Index = () => {
   );
 };
 
+// Só exibe o painel, não é mais a tela inicial
 export default Index;
