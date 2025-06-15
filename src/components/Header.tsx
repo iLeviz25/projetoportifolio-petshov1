@@ -10,12 +10,12 @@ interface HeaderProps {
 
 export const Header = ({ isDarkMode, setIsDarkMode, isSidebarOpen, setIsSidebarOpen }: HeaderProps) => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md dark:bg-[#202030] border-b border-gray-200 dark:border-gray-700 dark:shadow-lg transition-colors duration-200">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-gray-700 dark:shadow-lg transition-colors duration-200">
       <div className="flex items-center justify-between px-6 py-4">
         <div className="flex items-center">
           <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="lg:hidden p-2 rounded-md text-purple-600 dark:text-[#dddddd] hover:bg-purple-50 dark:hover:bg-[#2c2c3a] transition-colors"
+            className="lg:hidden p-2 rounded-md text-purple-600 dark:text-[#ffffff] hover:bg-purple-50 dark:hover:bg-[#2c2c3a] transition-colors"
             aria-label="Abrir menu"
           >
             <PawPrint className="w-7 h-7" />
@@ -29,12 +29,12 @@ export const Header = ({ isDarkMode, setIsDarkMode, isSidebarOpen, setIsSidebarO
         <div className="flex items-center space-x-4">
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
-            className="p-2 rounded-md text-purple-600 dark:text-[#dddddd] hover:bg-purple-50 dark:hover:bg-[#2c2c3a] transition-colors"
+            className="p-2 rounded-md text-purple-600 dark:text-[#ffffff] hover:bg-purple-50 dark:hover:bg-[#2c2c3a] transition-colors"
           >
             {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
           <div className="relative">
-            <button className="p-2 rounded-md text-purple-600 dark:text-[#dddddd] hover:bg-purple-50 dark:hover:bg-[#2c2c3a] transition-colors">
+            <button className="p-2 rounded-md text-purple-600 dark:text-[#ffffff] hover:bg-purple-50 dark:hover:bg-[#2c2c3a] transition-colors">
               <Bell className="w-5 h-5" />
             </button>
             <span className="absolute -top-1 -right-1 bg-purple-500 dark:bg-[#c084fc] text-white dark:text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">

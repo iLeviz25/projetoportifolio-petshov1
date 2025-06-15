@@ -64,11 +64,11 @@ export const Overview = () => {
             <div key={index} className={`rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] p-6 transition-all duration-200 hover:shadow-md ${card.color} hover:scale-105`}>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium">{card.title}</p>
-                  <p className="text-3xl font-bold mt-2">{card.value}</p>
+                  <p className="text-sm font-medium dark:text-[#ffffff]">{card.title}</p>
+                  <p className="text-3xl font-bold mt-2 dark:text-[#ffffff]">{card.value}</p>
                   <div className="flex items-center mt-2">
                     <span className="text-xs font-semibold dark:text-[#bbbbbb]">Variação mensal</span>
-                    <span className="ml-2 text-xs">{card.change}</span>
+                    <span className="ml-2 text-xs dark:text-[#bbbbbb]">{card.change}</span>
                   </div>
                 </div>
                 <div className="p-3 bg-white bg-opacity-60 dark:bg-[#2c2c3a] rounded-lg">
