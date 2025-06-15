@@ -35,7 +35,7 @@ const Index = () => {
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'dark' : ''}`}>
-      <div className="min-h-screen bg-gradient-to-tr from-blue-100 via-pink-100 to-green-100 dark:bg-gray-900 transition-colors duration-200">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-green-50 dark:bg-[#1e1e2e] transition-colors duration-200">
         <Header 
           isDarkMode={isDarkMode}
           setIsDarkMode={setIsDarkMode}

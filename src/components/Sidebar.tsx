@@ -29,17 +29,17 @@ export const Sidebar = ({ activeSection, setActiveSection, isSidebarOpen, setIsS
       )}
       {/* Sidebar */}
       <aside className={`
-        fixed top-0 left-0 z-50 w-64 h-full bg-gradient-to-br from-blue-100 via-pink-50 to-green-100 dark:from-slate-900 dark:via-pink-900 dark:to-teal-950
-        border-r border-gray-200 dark:border-gray-700 
+        fixed top-0 left-0 z-50 w-64 h-full bg-gradient-to-br from-blue-50 via-purple-50 to-green-50 dark:bg-[#181828]
+        border-r border-gray-200 dark:border-gray-600 
         transform transition-transform duration-300 ease-in-out
         ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
         lg:translate-x-0 lg:static lg:z-auto
       `}>
-        <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700 lg:hidden">
-          <h2 className="text-lg font-semibold text-pink-700 dark:text-pink-200">Menu</h2>
+        <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-600 lg:hidden">
+          <h2 className="text-lg font-semibold text-purple-700 dark:text-[#f5f5f5]">Menu</h2>
           <button
             onClick={() => setIsSidebarOpen(false)}
-            className="p-2 rounded-md text-teal-600 dark:text-pink-300 hover:bg-pink-100 dark:hover:bg-teal-900"
+            className="p-2 rounded-md text-purple-600 dark:text-[#a5b4fc] hover:bg-purple-50 dark:hover:bg-[#1f1f2b]"
           >
             <PawPrint className="w-5 h-5" />
           </button>
@@ -59,12 +59,12 @@ export const Sidebar = ({ activeSection, setActiveSection, isSidebarOpen, setIsS
                     className={`
                       w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors
                       ${isActive 
-                        ? 'bg-pink-200 dark:bg-pink-900 text-pink-900 dark:text-pink-200 font-semibold shadow-md'
-                        : 'text-teal-800 dark:text-pink-100 hover:bg-pink-100 dark:hover:bg-pink-950'
+                        ? 'bg-purple-100 dark:bg-[#252535] text-purple-900 dark:text-[#f5f5f5] font-semibold shadow-md border dark:border-[#7dd3fc]'
+                        : 'text-purple-800 dark:text-[#e0e0e0] hover:bg-purple-50 dark:hover:bg-[#1f1f2b]'
                       }
                     `}
                   >
-                    <Icon className="w-5 h-5" />
+                    <Icon className={`w-5 h-5 ${isActive ? 'text-purple-600 dark:text-[#7dd3fc]' : ''}`} />
                     <span>{item.label}</span>
                   </button>
                 </li>
