@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Input } from "@/components/ui/input";
@@ -102,7 +101,7 @@ export default function Login() {
           </div>
           <Button
             type="submit"
-            className="w-full mt-2 bg-primary text-white dark:bg-[#4c1d95] dark:text-white hover:bg-[#5b21b6] dark:hover:bg-[#c084fc] transition-colors duration-300"
+            className="w-full mt-2 bg-[#4c1d95] text-white hover:bg-[#5b21b6] dark:bg-[#4c1d95] dark:text-white dark:hover:bg-[#c084fc] transition-colors duration-300"
             disabled={loading}
           >
             {loading ? "Entrando..." : "Entrar"}
