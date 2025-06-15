@@ -1,5 +1,6 @@
 
 import { PawPrint, Users, Bath, MessageSquare, Settings, Dog } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
 
 interface SidebarProps {
   activeSection: string;
@@ -23,6 +24,8 @@ export const Sidebar = ({
   isSidebarOpen,
   setIsSidebarOpen,
 }: SidebarProps) => {
+  const { theme } = useTheme();
+
   return (
     <>
       {/* Mobile Overlay */}
@@ -36,8 +39,7 @@ export const Sidebar = ({
       <aside
         className={`
           fixed top-0 left-0 z-50 w-64 h-full
-          bg-[#181828] dark:bg-[#181828]
-          border-r border-gray-200 dark:border-gray-700
+          ${theme === "dark" ? "bg-[#181828] text-[#dddddd] border-r border-[#23233b]" : "bg-[#f8f8fa] text-[#444444] border-r border-[#eaeaec]"}
           transition-transform duration-300 ease-in-out
           pt-20
           ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
@@ -61,13 +63,16 @@ export const Sidebar = ({
                       w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors text-lg
                       font-medium
                       ${isActive
-                        ? "bg-[#4c1d95] text-white font-bold shadow-lg"
-                        : "text-[#dddddd] hover:bg-[#262636]"
-                      }
+                        ? (theme === "dark"
+                          ? "bg-[#4c1d95] text-white font-bold shadow-lg"
+                          : "bg-[#ede9fe] text-[#4c1d95] font-bold shadow")
+                        : (theme === "dark"
+                          ? "text-[#dddddd] hover:bg-[#23233b]"
+                          : "text-[#444444] hover:bg-[#ede9fe] hover:text-[#4c1d95]")}
                     `}
-                    style={isActive ? { boxShadow: '0 0 10px rgba(76,29,149,0.12)' } : {}}
+                    style={isActive ? { boxShadow: theme === "dark" ? '0 0 10px rgba(76,29,149,0.12)' : '0 0 8px #ede9fe' } : {}}
                   >
-                    <Icon className={`w-5 h-5 ${isActive ? "text-white" : "text-[#a78bfa]"}`} />
+                    <Icon className={`w-5 h-5 ${isActive ? (theme==="dark"?"text-white":"text-[#4c1d95]") : (theme==="dark"?"text-[#a78bfa]":"text-[#4c1d95]")}`} />
                     <span>{item.label}</span>
                   </button>
                 </li>

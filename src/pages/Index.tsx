@@ -8,10 +8,10 @@ import { Messages } from "@/components/Messages";
 import { Orders as Appointments } from "@/components/Appointments";
 import { Pets } from "@/components/Pets";
 import { Settings } from "@/components/Settings";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("overview");
-  const [isDarkMode, setIsDarkMode] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const renderContent = () => {
@@ -34,17 +34,9 @@ const Index = () => {
   };
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'dark' : ''}`}>
-      <div className={`
-        min-h-screen transition-colors duration-200
-        ${isDarkMode
-          ? 'bg-[#121212]'
-          : 'bg-gradient-to-br from-blue-50 via-purple-50 to-green-50'
-        }
-      `}>
+    <ThemeProvider>
+      <div className="min-h-screen bg-white text-[#121212] dark:bg-[#121212] dark:text-white transition-colors">
         <Header
-          isDarkMode={isDarkMode}
-          setIsDarkMode={setIsDarkMode}
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />
@@ -60,7 +52,7 @@ const Index = () => {
           </main>
         </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 
