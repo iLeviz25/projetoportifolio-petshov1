@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
     watch: {
       usePolling: false,
       interval: 1000,
-      ignored: ['**/node_modules/**', '**/.git/**']
+      ignored: ['**/node_modules/**', '**/.git/**', '**/dist/**', '**/build/**']
     }
   },
   plugins: [
@@ -25,6 +25,6 @@ export default defineConfig(({ mode }) => ({
     },
   },
   optimizeDeps: {
-    exclude: []
+    exclude: ['lovable-tagger']
   }
 }));
