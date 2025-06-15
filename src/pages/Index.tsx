@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { Overview } from "@/components/Overview";
 import { Clients } from "@/components/Clients";
 import { Messages } from "@/components/Messages";
-import { Orders as Appointments } from "@/components/Appointments";
+import { Appointments } from "@/components/Appointments"; // FIXED HERE
 import { Pets } from "@/components/Pets";
 import { Settings } from "@/components/Settings";
 import { ThemeProvider } from "@/components/ThemeProvider";
