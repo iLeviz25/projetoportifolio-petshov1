@@ -5,7 +5,8 @@ import { Header } from "@/components/Header";
 import { Overview } from "@/components/Overview";
 import { Clients } from "@/components/Clients";
 import { Messages } from "@/components/Messages";
-import { Orders } from "@/components/Orders";
+import { Orders as Appointments } from "@/components/Appointments";
+import { Pets } from "@/components/Pets";
 import { Settings } from "@/components/Settings";
 
 const Index = () => {
@@ -19,8 +20,10 @@ const Index = () => {
         return <Overview />;
       case "clients":
         return <Clients />;
-      case "orders":
-        return <Orders />;
+      case "appointments":
+        return <Appointments />;
+      case "pets":
+        return <Pets />;
       case "messages":
         return <Messages />;
       case "settings":
@@ -32,14 +35,13 @@ const Index = () => {
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'dark' : ''}`}>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
+      <div className="min-h-screen bg-gradient-to-tr from-blue-100 via-pink-100 to-green-100 dark:bg-gray-900 transition-colors duration-200">
         <Header 
           isDarkMode={isDarkMode}
           setIsDarkMode={setIsDarkMode}
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />
-        
         <div className="flex">
           <Sidebar 
             activeSection={activeSection}
@@ -47,7 +49,6 @@ const Index = () => {
             isSidebarOpen={isSidebarOpen}
             setIsSidebarOpen={setIsSidebarOpen}
           />
-          
           <main className="flex-1 p-6 lg:ml-64 mt-16 transition-all duration-300">
             {renderContent()}
           </main>
