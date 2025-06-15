@@ -35,15 +35,21 @@ const Index = () => {
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'dark' : ''}`}>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-green-50 dark:bg-[#121212] transition-colors duration-200">
-        <Header 
+      <div className={`
+        min-h-screen transition-colors duration-200
+        ${isDarkMode
+          ? 'bg-[#121212]'
+          : 'bg-gradient-to-br from-blue-50 via-purple-50 to-green-50'
+        }
+      `}>
+        <Header
           isDarkMode={isDarkMode}
           setIsDarkMode={setIsDarkMode}
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />
         <div className="flex">
-          <Sidebar 
+          <Sidebar
             activeSection={activeSection}
             setActiveSection={setActiveSection}
             isSidebarOpen={isSidebarOpen}

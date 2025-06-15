@@ -12,30 +12,33 @@ export const Pets = () => {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold flex items-center gap-2 text-purple-700 dark:text-[#ffffff]">
-          <Dog className="w-7 h-7" />
+        <h1 className="text-2xl font-bold flex items-center gap-2 text-white">
+          <Dog className="w-7 h-7 text-[#c084fc]" />
           Pets Cadastrados
         </h1>
-        <div className="text-sm text-purple-700 dark:text-[#bbbbbb]">
+        <div className="text-sm text-[#bbbbbb]">
           Total: {pets.length} pets
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {pets.map((pet) => (
-          <div key={pet.id} className="bg-white dark:bg-[#1f1f2b] dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-all duration-200 hover:shadow-md hover:scale-105">
+          <div
+            key={pet.id}
+            className="bg-[#1f1f2b] shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-lg border border-[#23233b] p-6 transition-all duration-200 hover:shadow-md hover:scale-105"
+          >
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-green-100 dark:bg-[#2c2c3a] rounded-full flex items-center justify-center">
-                <PawPrint className="w-8 h-8 text-purple-600 dark:text-[#a78bfa]" />
+              <div className="w-12 h-12 bg-[#262636] rounded-full flex items-center justify-center">
+                <PawPrint className="w-8 h-8 text-[#a78bfa]" />
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-purple-800 dark:text-[#ffffff]">{pet.name}</h3>
-                <div className="text-sm text-gray-500 dark:text-[#bbbbbb] mt-1">
+                <h3 className="text-lg font-semibold text-white">{pet.name}</h3>
+                <div className="text-sm text-[#bbbbbb] mt-1">
                   Espécie: <span className="font-medium">{pet.specie}</span>
                 </div>
-                <div className="text-sm text-gray-500 dark:text-[#bbbbbb] mt-1">
+                <div className="text-sm text-[#bbbbbb] mt-1">
                   Idade: <span className="font-medium">{pet.age}</span>
                 </div>
-                <div className="text-sm text-gray-500 dark:text-[#bbbbbb] mt-1">
+                <div className="text-sm text-[#bbbbbb] mt-1">
                   Tutor: <span className="font-medium">{pet.owner}</span>
                 </div>
               </div>
