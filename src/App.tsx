@@ -20,15 +20,27 @@ function PrivateRoute({ children }: { children: JSX.Element }) {
   return children;
 }
 
+function PublicRoute({ children }: { children: JSX.Element }) {
+  const { isLoggedIn } = useAuth();
+  if (isLoggedIn) {
+    return <Navigate to="/dashboard" replace />;
+  }
+  return children;
+}
+
 const AppRoutes = () => (
   <Routes>
-    <Route path="/login" element={<Login />} />
+    <Route path="/login" element={
+      <PublicRoute>
+        <Login />
+      </PublicRoute>
+    } />
     <Route path="/dashboard" element={
       <PrivateRoute>
         <Index />
       </PrivateRoute>
     } />
-    <Route path="/" element={<Navigate to="/dashboard" replace />} />
+    <Route path="/" element={<Navigate to="/login" replace />} />
     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
     <Route path="*" element={<NotFound />} />
   </Routes>

@@ -49,7 +49,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white dark:bg-[#121212] transition-colors duration-300">
+    <div className="min-h-screen flex items-center justify-center bg-white dark:bg-[#121212] transition-colors duration-300 px-4">
       {/* Botão de tema */}
       <button
         className="absolute top-4 right-4 rounded-full p-2 bg-[#ededf7] dark:bg-[#23233b] border border-[#eaeaec] dark:border-[#23233b] shadow transition-colors duration-300 hover:bg-[#ede9fe] dark:hover:bg-[#34344d] active:scale-95"
@@ -70,6 +70,14 @@ export default function Login() {
             PetShop Login
           </span>
         </div>
+
+        {/* Testing Notice */}
+        <div className="w-full mb-6 p-4 rounded-lg bg-[#f3f4f6] dark:bg-[#262636] border border-[#e5e7eb] dark:border-[#34344d] text-center">
+          <p className="text-sm text-[#6b7280] dark:text-[#9ca3af] leading-relaxed">
+            💡 <strong>Para testar:</strong> Você pode usar qualquer e-mail e qualquer senha para acessar este projeto.
+          </p>
+        </div>
+
         <form onSubmit={handleLogin} className="w-full space-y-5">
           <div>
             <label htmlFor="email" className="block mb-1 text-base font-medium text-[#121212] dark:text-white transition-colors duration-300">
