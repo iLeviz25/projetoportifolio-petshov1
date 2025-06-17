@@ -1,7 +1,5 @@
 
 import { useState } from "react";
-import { Sidebar } from "@/components/Sidebar";
-import { Header } from "@/components/Header";
 import { Overview } from "@/components/Overview";
 import { Clients } from "@/components/Clients";
 import { Messages } from "@/components/Messages";
@@ -9,11 +7,11 @@ import { Appointments } from "@/components/Appointments";
 import { Pets } from "@/components/Pets";
 import { Settings } from "@/components/Settings";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { DashboardLayout } from "@/components/DashboardLayout";
 import { toast } from "@/components/ui/use-toast";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("overview");
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const renderContent = () => {
     switch (activeSection) {
@@ -44,24 +42,8 @@ const Index = () => {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-white text-[#121212] dark:bg-[#121212] dark:text-white transition-colors">
-        <Header
-          isSidebarOpen={isSidebarOpen}
-          setIsSidebarOpen={setIsSidebarOpen}
-        />
-        <div className="flex w-full">
-          <Sidebar
-            activeSection={activeSection}
-            setActiveSection={setActiveSection}
-            isSidebarOpen={isSidebarOpen}
-            setIsSidebarOpen={setIsSidebarOpen}
-          />
-          <main className="flex-1 lg:ml-[240px] mt-16 transition-all duration-300 w-full">
-            <div className="max-w-[1280px] mx-auto px-8 py-6 w-full">
-              {renderContent()}
-            </div>
-          </main>
-        </div>
+      <DashboardLayout>
+        {renderContent()}
         {/* Botão fixo para apenas mobile */}
         <button
           onClick={showDesktopToast}
@@ -69,7 +51,7 @@ const Index = () => {
         >
           Ver versão Desktop
         </button>
-      </div>
+      </DashboardLayout>
     </ThemeProvider>
   );
 };
