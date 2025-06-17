@@ -1,12 +1,12 @@
-# Projeto: Landing Page Profissional
+# Projeto: Dashboard de Análises
 
 
 
-> Uma página de apresentação moderna e responsiva, projetada para converter visitantes em clientes.
+> Um painel de controle interativo e responsivo, criado para transformar dados brutos em insights de negócio acionáveis.
 
 
 
-⭐ **Link para o Projeto ao Vivo: [Clique aqui para ver a Landing Page](https://projetoportifolio-petshov1.vercel.app/dashboard)**
+⭐ **Link para o Projeto ao Vivo: [Clique aqui para interagir com o Dashboard](https://projetoportifolio-petshov1.vercel.app/)**
 
 
 
@@ -16,33 +16,33 @@
 
 ### 🎯 O Desafio
 
-O objetivo deste projeto foi criar uma página de apresentação completa para um negócio, destacando seus serviços, validando autoridade com depoimentos e facilitando o contato de novos clientes através de um formulário funcional.
+O objetivo era desenvolver uma interface de visualização de dados que permitisse a um usuário (como um gerente ou analista) monitorar métricas chave de forma rápida e intuitiva, com gráficos e estatísticas claras.
 
 
 
 ### 💡 A Solução
 
-Utilizando **React** e um fluxo de trabalho acelerado por IA, o projeto foi desenvolvido com foco em um design limpo, performance de carregamento e uma experiência de usuário intuitiva em qualquer dispositivo (desktop, tablet ou celular).
+Construído com **React** e o auxílio de IA para acelerar o desenvolvimento de componentes de visualização, este dashboard oferece uma experiência de usuário fluida para a análise de dados complexos.
 
 
 
-### ✨ Principais Seções
+### ✨ Principais Funcionalidades
 
-- Header com navegação clara e funcional.
+- Visualização de dados com gráficos dinâmicos (ex: Gráficos de Barra, Pizza).
 
-- Seção de "Herói" com uma chamada para ação principal (CTA).
+- Cards com KPIs (Indicadores Chave de Performance) em destaque.
 
-- Apresentação de Serviços ou Funcionalidades.
+- Tabela de dados com funcionalidades de busca e/ou filtros.
 
-- Seção de Depoimentos de Clientes para gerar prova social.
-
-- Formulário de Contato integrado.
+- Design totalmente responsivo para acesso em desktops e dispositivos móveis.
 
 
 
 ### 🛠️ Tecnologias Utilizadas
 
 - React
+
+- (Opcional: Se usou alguma biblioteca de gráficos, adicione aqui. Ex: Chart.js, Recharts)
 
 - JavaScript / HTML / CSS
 
