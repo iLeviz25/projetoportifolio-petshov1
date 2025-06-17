@@ -6,10 +6,11 @@ import { useState } from "react";
 
 interface DashboardLayoutProps {
   children: ReactNode;
+  activeSection: string;
+  setActiveSection: (section: string) => void;
 }
 
-export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
-  const [activeSection, setActiveSection] = useState("overview");
+export const DashboardLayout = ({ children, activeSection, setActiveSection }: DashboardLayoutProps) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
@@ -23,12 +24,12 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
         />
       </aside>
 
-      <div className="flex-1 flex flex-col max-w-[1280px] mx-auto w-full px-8 py-6">
+      <div className="flex-1 flex flex-col w-full">
         <Header
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />
-        <main className="mt-4">
+        <main className="mt-20 px-4 py-4 max-w-[1200px] mx-auto w-full">
           {children}
         </main>
       </div>

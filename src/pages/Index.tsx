@@ -42,7 +42,10 @@ const Index = () => {
 
   return (
     <ThemeProvider>
-      <DashboardLayout>
+      <DashboardLayout
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+      >
         {renderContent()}
         {/* Botão fixo para apenas mobile */}
         <button
