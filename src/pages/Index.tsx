@@ -49,15 +49,17 @@ const Index = () => {
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex">
           <Sidebar
             activeSection={activeSection}
             setActiveSection={setActiveSection}
             isSidebarOpen={isSidebarOpen}
             setIsSidebarOpen={setIsSidebarOpen}
           />
-          <main className="flex-1 p-3 sm:p-4 md:p-6 lg:ml-64 mt-16 transition-all duration-300 w-full max-w-full min-w-0">
-            {renderContent()}
+          <main className="flex-1 lg:ml-60 mt-16 transition-all duration-300 w-full max-w-6xl mx-auto">
+            <div className="px-8 py-8">
+              {renderContent()}
+            </div>
           </main>
         </div>
         {/* Botão fixo para apenas mobile */}

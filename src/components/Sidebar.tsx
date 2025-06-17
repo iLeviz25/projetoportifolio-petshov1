@@ -39,16 +39,23 @@ export const Sidebar = ({
       <aside
         className={`
           fixed top-0 left-0 z-50 w-64 h-full
-          ${theme === "dark" ? "bg-[#181828] text-[#dddddd] border-r border-[#23233b]" : "bg-[#f8f8fa] text-[#444444] border-r border-[#eaeaec]"}
+          ${theme === "dark" 
+            ? "bg-gradient-to-b from-[#181828] to-[#1a1a2e] text-[#dddddd] border-r border-[#23233b]" 
+            : "bg-gradient-to-b from-[#f8f8fa] to-[#f0f0f5] text-[#444444] border-r border-[#eaeaec]"}
           transition-transform duration-300 ease-in-out
-          pt-20
+          pt-20 px-6 py-4
+          rounded-tr-2xl rounded-br-2xl
           ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
           lg:translate-x-0 lg:static lg:z-auto
         `}
-        style={{ boxShadow: '0 1px 8px rgba(25,25,34,0.10)' }}
+        style={{ 
+          boxShadow: theme === "dark" 
+            ? '4px 0 20px rgba(0,0,0,0.3)' 
+            : '4px 0 20px rgba(25,25,34,0.1)' 
+        }}
       >
-        <nav className="px-4">
-          <ul className="space-y-2">
+        <nav>
+          <ul className="flex flex-col gap-2">
             {menuItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeSection === item.id;
@@ -60,19 +67,23 @@ export const Sidebar = ({
                       setIsSidebarOpen(false);
                     }}
                     className={`
-                      w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors text-lg
+                      w-full flex items-center gap-4 px-6 py-4 rounded-xl text-left transition-all duration-200 text-base
                       font-medium
                       ${isActive
                         ? (theme === "dark"
-                          ? "bg-[#4c1d95] text-white font-bold shadow-lg"
-                          : "bg-[#ede9fe] text-[#4c1d95] font-bold shadow")
+                          ? "bg-gradient-to-r from-[#4c1d95] to-[#5b21b6] text-white font-semibold shadow-lg transform scale-105"
+                          : "bg-gradient-to-r from-[#ede9fe] to-[#ddd6fe] text-[#4c1d95] font-semibold shadow-md transform scale-105")
                         : (theme === "dark"
-                          ? "text-[#dddddd] hover:bg-[#23233b]"
+                          ? "text-[#dddddd] hover:bg-[#23233b] hover:text-[#a78bfa]"
                           : "text-[#444444] hover:bg-[#ede9fe] hover:text-[#4c1d95]")}
                     `}
-                    style={isActive ? { boxShadow: theme === "dark" ? '0 0 10px rgba(76,29,149,0.12)' : '0 0 8px #ede9fe' } : {}}
+                    style={isActive ? { 
+                      boxShadow: theme === "dark" 
+                        ? '0 4px 15px rgba(76,29,149,0.3)' 
+                        : '0 4px 15px rgba(237,233,254,0.5)' 
+                    } : {}}
                   >
-                    <Icon className={`w-5 h-5 ${isActive ? (theme==="dark"?"text-white":"text-[#4c1d95]") : (theme==="dark"?"text-[#a78bfa]":"text-[#4c1d95]")}`} />
+                    <Icon className={`w-6 h-6 ${isActive ? (theme==="dark"?"text-white":"text-[#4c1d95]") : (theme==="dark"?"text-[#a78bfa]":"text-[#4c1d95]")}`} />
                     <span>{item.label}</span>
                   </button>
                 </li>

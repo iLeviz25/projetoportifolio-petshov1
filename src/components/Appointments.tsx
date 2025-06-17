@@ -24,35 +24,35 @@ const getStatusColor = (status: string) => {
 
 export const Appointments = () => {
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-        <h1 className="text-lg sm:text-2xl font-bold flex items-center gap-2 text-[#121212] dark:text-white">
-          <Bath className="w-6 sm:w-7 h-6 sm:h-7 text-[#c084fc]" />
+    <div className="space-y-8">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <h1 className="text-2xl md:text-3xl font-semibold flex items-center gap-3 text-[#121212] dark:text-white">
+          <Bath className="w-8 h-8 text-[#c084fc]" />
           Agendamentos (Consultas e Banhos)
         </h1>
-        <div className="text-xs sm:text-sm text-[#444444] dark:text-[#bbbbbb]">
+        <div className="text-base text-[#444444] dark:text-[#bbbbbb] font-medium">
           Total: {appointments.length}
         </div>
       </div>
-      <div className="rounded-lg border border-[#eaeaec] dark:border-[#23233b] shadow-[0_0_10px_rgba(0,0,0,0.08)] dark:shadow-[0_0_12px_rgba(0,0,0,0.32)] bg-white dark:bg-[#1f1f2b] overflow-hidden">
+      <div className="rounded-2xl border border-[#eaeaec] dark:border-[#23233b] shadow-lg dark:shadow-[0_0_12px_rgba(0,0,0,0.32)] bg-white dark:bg-[#1f1f2b] overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[375px] sm:min-w-[480px]">
+          <table className="w-full min-w-[375px] sm:min-w-[480px]" style={{ borderSpacing: '0.5rem' }}>
             <thead className="bg-[#f5f5fa] dark:bg-[#23233b]">
               <tr>
-                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">Nome do Pet</th>
-                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">Serviço</th>
-                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">Data</th>
-                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">Status</th>
+                <th className="px-6 py-4 text-left text-sm font-semibold text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider rounded-l-lg">Nome do Pet</th>
+                <th className="px-6 py-4 text-left text-sm font-semibold text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">Serviço</th>
+                <th className="px-6 py-4 text-left text-sm font-semibold text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">Data</th>
+                <th className="px-6 py-4 text-left text-sm font-semibold text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider rounded-r-lg">Status</th>
               </tr>
             </thead>
             <tbody>
               {appointments.map((item) => (
                 <tr key={item.id} className="hover:bg-[#ede9fe] dark:hover:bg-[#262636] transition-colors">
-                  <td className="px-4 sm:px-6 py-4 text-sm font-medium text-[#121212] dark:text-white">{item.pet}</td>
-                  <td className="px-4 sm:px-6 py-4 text-sm text-[#444444] dark:text-[#bbbbbb]">{item.service}</td>
-                  <td className="px-4 sm:px-6 py-4 text-sm text-[#444444] dark:text-[#bbbbbb]">{new Date(item.date).toLocaleDateString('pt-BR')}</td>
-                  <td className="px-4 sm:px-6 py-4">
-                    <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(item.status)}`}>
+                  <td className="px-6 py-5 text-base font-medium text-[#121212] dark:text-white">{item.pet}</td>
+                  <td className="px-6 py-5 text-base text-[#444444] dark:text-[#bbbbbb]">{item.service}</td>
+                  <td className="px-6 py-5 text-base text-[#444444] dark:text-[#bbbbbb]">{new Date(item.date).toLocaleDateString('pt-BR')}</td>
+                  <td className="px-6 py-5">
+                    <span className={`inline-flex px-3 py-2 text-sm font-semibold rounded-full ${getStatusColor(item.status)}`}>
                       {item.status}
                     </span>
                   </td>
