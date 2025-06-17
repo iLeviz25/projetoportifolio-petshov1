@@ -48,32 +48,32 @@ const getStatusColor = (status: string) => {
 
 export const Overview = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <h1 className="text-2xl md:text-3xl font-semibold flex items-center gap-3 text-[#121212] dark:text-white">
-        <PawPrint className="w-8 h-8 text-[#c084fc]" />
+        <PawPrint className="w-7 h-7 text-[#c084fc]" />
         Visão Geral
       </h1>
       
       {/* Stats Cards */}
-      <div className="flex flex-wrap gap-4 md:grid md:grid-cols-3">
+      <div className="flex flex-wrap gap-4 w-full">
         {statsCards.map((card, index) => {
           const Icon = card.icon;
           return (
             <div
               key={index}
-              className="flex-1 min-w-72 rounded-2xl border border-[#eaeaec] dark:border-[#23233b] shadow-lg p-6 transition-all duration-300 hover:shadow-xl dark:bg-[#1f1f2b] bg-white hover:scale-105"
+              className="flex-1 min-w-[250px] rounded-xl border border-[#eaeaec] dark:border-[#23233b] shadow-lg p-6 transition-all duration-300 hover:shadow-xl dark:bg-[#1f1f2b] bg-white hover:scale-[1.02]"
             >
               <div className="flex items-center justify-between">
                 <div className="flex-1">
                   <p className="text-sm font-medium text-[#444444] dark:text-[#bbbbbb] mb-2">{card.title}</p>
-                  <p className="text-3xl font-semibold text-[#121212] dark:text-white mb-3">{card.value}</p>
+                  <p className="text-2xl font-semibold text-[#121212] dark:text-white mb-2">{card.value}</p>
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-medium text-[#444444] dark:text-[#bbbbbb]">Variação mensal</span>
-                    <span className="text-sm text-[#444444] dark:text-[#bbbbbb]">{card.change}</span>
+                    <span className="text-xs font-medium text-[#444444] dark:text-[#bbbbbb]">Variação mensal</span>
+                    <span className="text-xs text-[#444444] dark:text-[#bbbbbb]">{card.change}</span>
                   </div>
                 </div>
-                <div className="p-4 bg-gradient-to-br from-[#ede9fe] to-[#ddd6fe] dark:from-[#2c2c3a] dark:to-[#262636] rounded-xl">
-                  <Icon className="w-8 h-8 text-[#a78bfa]" />
+                <div className="p-3 bg-gradient-to-br from-[#ede9fe] to-[#ddd6fe] dark:from-[#2c2c3a] dark:to-[#262636] rounded-xl">
+                  <Icon className="w-6 h-6 text-[#a78bfa]" />
                 </div>
               </div>
             </div>
@@ -82,24 +82,24 @@ export const Overview = () => {
       </div>
 
       {/* Recent Appointments */}
-      <div className="dark:bg-[#1f1f2b] bg-white shadow-lg rounded-2xl border border-[#eaeaec] dark:border-[#23233b] overflow-hidden">
-        <div className="px-8 py-6 border-b border-[#eaeaec] dark:border-[#23233b]">
+      <div className="dark:bg-[#1f1f2b] bg-white shadow-lg rounded-xl border border-[#eaeaec] dark:border-[#23233b] overflow-hidden">
+        <div className="px-6 py-4 border-b border-[#eaeaec] dark:border-[#23233b]">
           <h2 className="text-xl font-semibold text-[#121212] dark:text-white">Últimos Agendamentos</h2>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[450px]" style={{ borderSpacing: '0.5rem' }}>
+          <table className="w-full">
             <thead className="bg-[#f5f5fa] dark:bg-[#23233b]">
               <tr>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider rounded-l-lg">
+                <th className="px-6 py-3 text-left text-sm font-semibold text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">
                   Nome do Pet
                 </th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-sm font-semibold text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">
                   Serviço
                 </th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-sm font-semibold text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">
                   Data
                 </th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider rounded-r-lg">
+                <th className="px-6 py-3 text-left text-sm font-semibold text-[#444444] dark:text-[#bbbbbb] uppercase tracking-wider">
                   Status
                 </th>
               </tr>
@@ -110,18 +110,18 @@ export const Overview = () => {
                   key={appt.id}
                   className="hover:bg-[#ede9fe] dark:hover:bg-[#262636] transition-colors"
                 >
-                  <td className="px-6 py-5 whitespace-nowrap text-base font-medium text-[#121212] dark:text-white">
+                  <td className="px-6 py-4 whitespace-nowrap text-base font-medium text-[#121212] dark:text-white">
                     {appt.petName}
                   </td>
-                  <td className="px-6 py-5 whitespace-nowrap text-base text-[#444444] dark:text-[#bbbbbb]">
+                  <td className="px-6 py-4 whitespace-nowrap text-base text-[#444444] dark:text-[#bbbbbb]">
                     {appt.service}
                   </td>
-                  <td className="px-6 py-5 whitespace-nowrap text-base text-[#444444] dark:text-[#bbbbbb]">
+                  <td className="px-6 py-4 whitespace-nowrap text-base text-[#444444] dark:text-[#bbbbbb]">
                     {new Date(appt.date).toLocaleDateString('pt-BR')}
                   </td>
-                  <td className="px-6 py-5 whitespace-nowrap">
+                  <td className="px-6 py-4 whitespace-nowrap">
                     <span
-                      className={`inline-flex px-3 py-2 text-sm font-semibold rounded-full ${getStatusColor(appt.status)}`}
+                      className={`inline-flex px-3 py-1 text-sm font-semibold rounded-full ${getStatusColor(appt.status)}`}
                     >
                       {appt.status}
                     </span>

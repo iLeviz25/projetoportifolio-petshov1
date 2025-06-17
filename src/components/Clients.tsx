@@ -34,25 +34,25 @@ const clients = [
 
 export const Clients = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <h1 className="text-2xl md:text-3xl font-semibold flex items-center gap-3 text-[#121212] dark:text-white">
-          <Users className="w-8 h-8 text-[#c084fc]" />
+          <Users className="w-7 h-7 text-[#c084fc]" />
           Clientes (Tutores)
         </h1>
         <div className="text-base text-[#444444] dark:text-[#bbbbbb] font-medium">
           Total: {clients.length} tutores
         </div>
       </div>
-      <div className="flex flex-wrap gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
+      <div className="flex flex-wrap gap-4 w-full">
         {clients.map((client) => (
           <div
             key={client.id}
-            className="flex-1 min-w-72 rounded-2xl border border-[#eaeaec] dark:border-[#23233b] p-6 shadow-lg dark:shadow-[0_0_12px_rgba(0,0,0,0.32)] bg-white dark:bg-[#1f1f2b] transition-all hover:shadow-xl hover:scale-105"
+            className="flex-1 min-w-[280px] rounded-xl border border-[#eaeaec] dark:border-[#23233b] p-6 shadow-lg dark:shadow-[0_0_12px_rgba(0,0,0,0.32)] bg-white dark:bg-[#1f1f2b] transition-all hover:shadow-xl hover:scale-[1.02]"
           >
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#ede9fe] to-[#ddd6fe] dark:from-[#262636] dark:to-[#2c2c3a] rounded-xl flex items-center justify-center">
-                <PawPrint className="w-8 h-8 text-[#a78bfa]" />
+              <div className="w-12 h-12 bg-gradient-to-br from-[#ede9fe] to-[#ddd6fe] dark:from-[#262636] dark:to-[#2c2c3a] rounded-xl flex items-center justify-center">
+                <PawPrint className="w-6 h-6 text-[#a78bfa]" />
               </div>
               <div className="flex-1">
                 <h3 className="text-lg font-semibold text-[#121212] dark:text-white mb-2">{client.name}</h3>

@@ -49,15 +49,15 @@ const Index = () => {
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />
-        <div className="flex">
+        <div className="flex w-full">
           <Sidebar
             activeSection={activeSection}
             setActiveSection={setActiveSection}
             isSidebarOpen={isSidebarOpen}
             setIsSidebarOpen={setIsSidebarOpen}
           />
-          <main className="flex-1 lg:ml-60 mt-16 transition-all duration-300 w-full max-w-6xl mx-auto">
-            <div className="px-8 py-8">
+          <main className="flex-1 lg:ml-[240px] mt-16 transition-all duration-300 w-full">
+            <div className="max-w-[1280px] mx-auto px-8 py-6 w-full">
               {renderContent()}
             </div>
           </main>
