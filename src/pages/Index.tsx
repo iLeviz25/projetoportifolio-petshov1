@@ -6,7 +6,6 @@ import { Messages } from "@/components/Messages";
 import { Appointments } from "@/components/Appointments";
 import { Pets } from "@/components/Pets";
 import { Settings } from "@/components/Settings";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import { DashboardLayout } from "@/components/DashboardLayout";
 import { toast } from "@/components/ui/use-toast";
 
@@ -41,21 +40,19 @@ const Index = () => {
     });
 
   return (
-    <ThemeProvider>
-      <DashboardLayout
-        activeSection={activeSection}
-        setActiveSection={setActiveSection}
+    <DashboardLayout
+      activeSection={activeSection}
+      setActiveSection={setActiveSection}
+    >
+      {renderContent()}
+      {/* Botão fixo para apenas mobile */}
+      <button
+        onClick={showDesktopToast}
+        className="fixed z-40 bottom-5 right-4 px-4 py-3 rounded-full shadow-lg bg-[#ede9fe] dark:bg-[#4c1d95] text-[#4c1d95] dark:text-white text-base font-semibold transition-all active:scale-95 md:hidden"
       >
-        {renderContent()}
-        {/* Botão fixo para apenas mobile */}
-        <button
-          onClick={showDesktopToast}
-          className="fixed z-40 bottom-5 right-4 px-4 py-3 rounded-full shadow-lg bg-[#ede9fe] dark:bg-[#4c1d95] text-[#4c1d95] dark:text-white text-base font-semibold transition-all active:scale-95 md:hidden"
-        >
-          Ver versão Desktop
-        </button>
-      </DashboardLayout>
-    </ThemeProvider>
+        Ver versão Desktop
+      </button>
+    </DashboardLayout>
   );
 };
 
