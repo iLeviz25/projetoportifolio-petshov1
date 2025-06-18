@@ -1,7 +1,6 @@
 
 import { PawPrint, Users, Bath, MessageSquare, Settings, Dog } from "lucide-react";
-import { useTheme } from "./ThemeProvider";
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, memo } from "react";
 
 interface SidebarProps {
   activeSection: string;
@@ -19,14 +18,12 @@ const menuItems = [
   { id: "settings", label: "Configurações", icon: Settings },
 ];
 
-export const Sidebar = ({
+export const Sidebar = memo(({
   activeSection,
   setActiveSection,
   isSidebarOpen,
   setIsSidebarOpen,
 }: SidebarProps) => {
-  const { theme } = useTheme();
-
   const handleItemClick = useCallback((itemId: string) => {
     setActiveSection(itemId);
     setIsSidebarOpen(false);
@@ -44,21 +41,17 @@ export const Sidebar = ({
               w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all duration-300 text-sm
               font-medium
               ${isActive
-                ? (theme === "dark"
-                  ? "bg-gradient-to-r from-[#4c1d95] to-[#5b21b6] text-white font-semibold shadow-lg"
-                  : "bg-gradient-to-r from-[#ede9fe] to-[#ddd6fe] text-[#4c1d95] font-semibold shadow-md")
-                : (theme === "dark"
-                  ? "text-[#dddddd] hover:bg-[#23233b] hover:text-[#a78bfa]"
-                  : "text-[#444444] hover:bg-[#ede9fe] hover:text-[#4c1d95]")}
+                ? "bg-gradient-to-r from-[#ede9fe] to-[#ddd6fe] dark:from-[#4c1d95] dark:to-[#5b21b6] text-[#4c1d95] dark:text-white font-semibold shadow-lg"
+                : "text-[#444444] dark:text-[#dddddd] hover:bg-[#ede9fe] dark:hover:bg-[#23233b] hover:text-[#4c1d95] dark:hover:text-[#a78bfa]"}
             `}
           >
-            <Icon className={`w-5 h-5 transition-colors duration-300 ${isActive ? (theme==="dark"?"text-white":"text-[#4c1d95]") : (theme==="dark"?"text-[#a78bfa]":"text-[#4c1d95]")}`} />
+            <Icon className={`w-5 h-5 transition-colors duration-300 ${isActive ? "text-[#4c1d95] dark:text-white" : "text-[#4c1d95] dark:text-[#a78bfa]"}`} />
             <span>{item.label}</span>
           </button>
         </li>
       );
     });
-  }, [activeSection, theme, handleItemClick]);
+  }, [activeSection, handleItemClick]);
 
   return (
     <div className="h-full flex flex-col pt-20 px-4 py-4 transition-all duration-300 ease-in-out">
@@ -69,4 +62,6 @@ export const Sidebar = ({
       </nav>
     </div>
   );
-};
+});
+
+Sidebar.displayName = "Sidebar";

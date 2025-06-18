@@ -1,5 +1,4 @@
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -91,7 +90,7 @@
       border-color 0.3s ease;
   }
 
-  /* Transições específicas para componentes do dashboard */
+  /* Transições específicas para containers do dashboard */
   .dashboard-container,
   .sidebar-container,
   .header-container,
@@ -103,12 +102,12 @@
       box-shadow 0.3s ease;
   }
 
-  /* Evitar flicker em gradientes */
+  /* Transições para gradientes (importante para o dashboard) */
   .bg-gradient-to-b,
   .bg-gradient-to-r,
   .bg-gradient-to-l,
   .bg-gradient-to-t {
-    transition: opacity 0.3s ease;
+    transition: background 0.3s ease, opacity 0.3s ease;
   }
 
   /* Transições para cards e componentes */
@@ -121,5 +120,28 @@
       color 0.3s ease,
       border-color 0.3s ease;
   }
-}
 
+  /* Transições específicas para layout containers */
+  aside,
+  main,
+  section,
+  .dashboard,
+  .layout-container {
+    transition: 
+      background-color 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  /* Transições para elementos com gradientes do dashboard */
+  [class*="from-[#f8f8fa]"],
+  [class*="to-[#f0f0f5]"],
+  [class*="dark:from-[#181828]"],
+  [class*="dark:to-[#1a1a2e]"] {
+    transition: 
+      background 0.3s ease,
+      background-color 0.3s ease,
+      opacity 0.3s ease;
+  }
+}

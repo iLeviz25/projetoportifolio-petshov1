@@ -2,14 +2,14 @@
 import { PawPrint, Sun, Moon, Bell, Menu } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { useAuth } from "@/context/AuthContext";
-import { useCallback } from "react";
+import { useCallback, memo } from "react";
 
 interface HeaderProps {
   isSidebarOpen: boolean;
   setIsSidebarOpen: (value: boolean) => void;
 }
 
-export const Header = ({
+export const Header = memo(({
   isSidebarOpen,
   setIsSidebarOpen,
 }: HeaderProps) => {
@@ -77,4 +77,6 @@ export const Header = ({
       </div>
     </header>
   );
-};
+});
+
+Header.displayName = "Header";

@@ -24,25 +24,13 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setThemeState] = useState<Theme>(getPreferredTheme);
 
   const applyTheme = (newTheme: Theme) => {
-    // Use requestAnimationFrame para evitar flicker durante a transição
-    requestAnimationFrame(() => {
-      const html = document.documentElement;
-      
-      // Remove ambas as classes primeiro
-      html.classList.remove("dark", "light");
-      
-      // Adiciona a nova classe após um frame
-      requestAnimationFrame(() => {
-        html.classList.add(newTheme);
-        
-        // Para o modo dark, garantir que o background do body seja aplicado
-        if (newTheme === "dark") {
-          document.body.style.backgroundColor = "#121212";
-        } else {
-          document.body.style.backgroundColor = "#ffffff";
-        }
-      });
-    });
+    const html = document.documentElement;
+    
+    // Remove ambas as classes primeiro
+    html.classList.remove("dark", "light");
+    
+    // Adiciona a nova classe imediatamente
+    html.classList.add(newTheme);
   };
 
   useEffect(() => {

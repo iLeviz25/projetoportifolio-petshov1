@@ -1,5 +1,5 @@
 
-import { ReactNode, useState, useCallback } from "react";
+import { ReactNode, useState, useCallback, memo } from "react";
 import { Sidebar } from "@/components/Sidebar";
 import { Header } from "@/components/Header";
 
@@ -9,7 +9,7 @@ interface DashboardLayoutProps {
   setActiveSection: (section: string) => void;
 }
 
-export const DashboardLayout = ({ children, activeSection, setActiveSection }: DashboardLayoutProps) => {
+export const DashboardLayout = memo(({ children, activeSection, setActiveSection }: DashboardLayoutProps) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const handleSidebarToggle = useCallback((value: boolean) => {
@@ -64,4 +64,6 @@ export const DashboardLayout = ({ children, activeSection, setActiveSection }: D
       </div>
     </div>
   );
-};
+});
+
+DashboardLayout.displayName = "DashboardLayout";
