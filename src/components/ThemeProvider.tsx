@@ -23,9 +23,30 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   const [theme, setThemeState] = useState<Theme>(getPreferredTheme);
 
+  const applyTheme = (newTheme: Theme) => {
+    // Use requestAnimationFrame para evitar flicker durante a transição
+    requestAnimationFrame(() => {
+      const html = document.documentElement;
+      
+      // Remove ambas as classes primeiro
+      html.classList.remove("dark", "light");
+      
+      // Adiciona a nova classe após um frame
+      requestAnimationFrame(() => {
+        html.classList.add(newTheme);
+        
+        // Para o modo dark, garantir que o background do body seja aplicado
+        if (newTheme === "dark") {
+          document.body.style.backgroundColor = "#121212";
+        } else {
+          document.body.style.backgroundColor = "#ffffff";
+        }
+      });
+    });
+  };
+
   useEffect(() => {
-    document.documentElement.classList.remove("dark", "light");
-    document.documentElement.classList.add(theme);
+    applyTheme(theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
 
@@ -36,9 +57,11 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
         setThemeState(e.matches ? "dark" : "light");
       }
     };
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", listener);
-    return () =>
-      window.matchMedia("(prefers-color-scheme: dark)").removeEventListener("change", listener);
+    
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    mediaQuery.addEventListener("change", listener);
+    
+    return () => mediaQuery.removeEventListener("change", listener);
   }, []);
 
   const setTheme = (theme: Theme) => setThemeState(theme);
