@@ -1,7 +1,7 @@
 
 import { PawPrint, Sun, Moon, Bell, Menu } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
-import { useNavigate } from "react-router-dom";
+import { useAuth } from "@/context/AuthContext";
 
 interface HeaderProps {
   isSidebarOpen: boolean;
@@ -13,10 +13,10 @@ export const Header = ({
   setIsSidebarOpen,
 }: HeaderProps) => {
   const { theme, toggleTheme } = useTheme();
-  const navigate = useNavigate();
+  const { logout } = useAuth();
 
   const handleLogout = () => {
-    navigate("/login", { replace: true });
+    logout();
   };
 
   return (

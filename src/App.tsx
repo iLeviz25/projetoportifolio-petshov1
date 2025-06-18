@@ -14,6 +14,7 @@ const queryClient = new QueryClient();
 function PrivateRoute({ children }: { children: JSX.Element }) {
   const { isLoggedIn } = useAuth();
   const location = useLocation();
+  
   if (!isLoggedIn) {
     return <Navigate to="/login" replace state={{ from: location }} />;
   }
