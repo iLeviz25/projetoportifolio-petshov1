@@ -32,19 +32,25 @@ function PublicRoute({ children }: { children: JSX.Element }) {
 
 const AppRoutes = () => (
   <Routes>
+    {/* Rota raiz redireciona para login */}
+    <Route path="/" element={<Navigate to="/login" replace />} />
+    
+    {/* Rota de login - só acessível se não estiver logado */}
     <Route path="/login" element={
       <PublicRoute>
         <Login />
       </PublicRoute>
     } />
+    
+    {/* Rota do dashboard - só acessível se estiver logado */}
     <Route path="/dashboard" element={
       <PrivateRoute>
         <Index />
       </PrivateRoute>
     } />
-    <Route path="/" element={<Navigate to="/login" replace />} />
-    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-    <Route path="*" element={<NotFound />} />
+    
+    {/* Todas as rotas inválidas redirecionam para login */}
+    <Route path="*" element={<Navigate to="/login" replace />} />
   </Routes>
 );
 
