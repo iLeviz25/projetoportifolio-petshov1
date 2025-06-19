@@ -2,7 +2,7 @@
 
 > Um painel de controle interativo e responsivo, criado para transformar dados brutos em insights de negócio acionáveis.
 
-⭐ **Link para o Projeto ao Vivo: [Clique aqui para interagir com o Dashboard](https://projetoportifolio-petshov1.vercel.app/login)**
+⭐ **Link para o Projeto ao Vivo: [Clique aqui para interagir com o Dashboard](https://projetoportifolio-petshov1.vercel.app)**
 
 ---
 
